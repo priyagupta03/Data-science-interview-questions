@@ -1,0 +1,9 @@
+Mention 3 ways to make your model robust to outliers?
+Ans a) Investigating the outliers is always the first step in understanding how to treat them. After you understand the nature of why the outliers occured you can apply one of several methods mentioned below.
+b) Add regularization that will reduce variance, for example L1 or L2 regularization.
+c) Use tree-based models(random forest, gradient boosting) that are generally less affected by outliers.
+d) Winsorize the data. Winsorizing or winsorization is the transformation of statistics by limiting extreme values in the statistical data to reduce the effect of possibly spurious outliers. In numerical data, if the distribution is almost normal using the Z-score we can detect the outliers and treat them by either removing or capping them with some value.    If the distribution is skewed using IQR we can detect and treat it by again either removing or capping it with some value. In categorical data check for value_count in the percentage if we have very few records from some category, either we can remove it or can cap it with some categorical values like others.
+e) Transform the data, for example, you do a log transformation when the response variable follows an exponential distribution or is right-skewed.
+f) Use more robust error metrics such as MAE or Huber loss instead of MSE.
+g) Remove the outliers, only do this if you are certain that the outliers are then anomalies that are not worthadding to your model. This should be your latest consideration since dropping them means losing information.
+h) You can use a robust error metric: Switching from mean squared error to mean absolute difference reduces the influence of outliers
